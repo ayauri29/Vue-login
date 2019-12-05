@@ -1,15 +1,16 @@
 <template lang="pug">
   div.container
-    img.logo(src="@/assets/logo.png")
-    h2 SIGN IN
-    el-form(@submit.prevent="login")
-      el-form-item(label="Correo electrónico")
-        el-input(type="text" placeholder="email" v-model="usuario")
-      el-form-item(label="Contraseña")
-        el-input(type="text" placeholder="password" v-model="contrasena" show-password)
-      el-button(@click="login") Acceder
-      p ¿No tienes una cuenta? 
-        router-link(to="/registro" tag="a") Regístrate
+    el-card
+      img.logo(src="@/assets/logo.png")
+      h2 SIGN IN
+      el-form(@submit.prevent="login")
+        el-form-item(label="Correo electrónico")
+          el-input(type="text" placeholder="email" v-model="usuario")
+        el-form-item(label="Contraseña")
+          el-input(type="text" placeholder="password" v-model="contrasena" show-password)
+        el-button(@click="login") Acceder
+        p ¿No tienes una cuenta? 
+          router-link(to="/registro" tag="a") Regístrate
 </template>
 
 <script>
@@ -54,4 +55,5 @@ export default {
     .el-button
       background-color #41b883
       border-color #41b883
+      
 </style>

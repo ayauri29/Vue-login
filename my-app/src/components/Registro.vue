@@ -1,15 +1,16 @@
 <template lang="pug">
   div.container
-    img.logo(src="@/assets/logo.png")
-    h2 SIGN UP
-    el-form(@submit.prevent="register")
-      el-form-item(label="Correo electrónico")
-        el-input(type="text" placeholder="email" v-model="usuario")
-      el-form-item(label="Contraseña")
-        el-input(type="text" placeholder="password" v-model="contrasena" show-password)
-      el-button(@click="register") Registrar
-      p ¿Ya tienes una cuenta? 
-        router-link(to="/login" tag="a") Ingresa
+    el-card
+      img.logo(src="@/assets/logo.png")
+      h2 SIGN UP
+      el-form(@submit.prevent="register")
+        el-form-item(label="Correo electrónico")
+          el-input(type="text" placeholder="email" v-model="usuario")
+        el-form-item(label="Contraseña")
+          el-input(type="text" placeholder="password" v-model="contrasena" show-password)
+        el-button(@click="register") Registrar
+        p ¿Ya tienes una cuenta? 
+          router-link(to="/login" tag="a") Ingresa
       
 </template>
 

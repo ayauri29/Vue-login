@@ -1,7 +1,7 @@
 <template lang="pug">
   div.container
     h2 Usuarios
-    el-button(v-on:click="getUs") Ver Usuarios
+    //- el-button(v-on:click="getUs") Ver Usuarios
     el-card.box-card
       div.clearfix(slot="header")
         span
@@ -28,7 +28,7 @@ export default {
     }
   },
   methods: {
-    getUs(){
+    /* getUs(){
       firebase.firestore().collection('users').onSnapshot(snapshot => {
           snapshot.forEach(doc => {
             console.log(doc.data())
@@ -36,13 +36,22 @@ export default {
             console.log(this.users)
           })
         })
-    },
+    }, */
     logOut() {
       firebase.auth().signOut().then(() => {
             
             this.$router.replace('login');
         })
     },
+  },
+  created() {
+    firebase.firestore().collection('users').onSnapshot(snapshot => {
+          snapshot.forEach(doc => {
+            console.log(doc.data())
+            this.users.push(doc.data())
+            console.log(this.users)
+          })
+        })
   }
 };
 </script>
