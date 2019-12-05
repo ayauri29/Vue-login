@@ -4,10 +4,15 @@
     el-button(v-on:click="getUs") Ver Usuarios
     el-card.box-card
       div.clearfix(slot="header")
-        span Lista de usuarios
+        span
+          strong LISTA DE USUARIOS
       div(v-for="user of users")
         el-card
-          p {{ user.email }} {{user.fecha}}  
+          div.container-card
+            span 
+              i(class="el-icon-user") {{ user.email }} 
+            span 
+              i(class="el-icon-time") {{user.fecha}}  
     el-button(v-on:click="logOut") Salir
 </template>
 
@@ -50,8 +55,10 @@ export default {
   .box-card
     width 480px
     margin 2%
-    .clearfix
-      &:after
-        display table
-        content ""
+    .container-card
+      font-size 15px
+      display  flex
+      flex-direction column
+      align-items flex-start
+    
 </style>

@@ -19,6 +19,7 @@ import firebase from "firebase";
 
 export default {
   data() {
+    
     return {
       usuario: "",
       contrasena: "",
@@ -27,7 +28,6 @@ export default {
   },
   methods: {
     createUsers(){
-      console.log('entre a crear')
       console.log(this.usuario, this.password)
       firebase.firestore().collection('users').add({
         email: this.usuario,
